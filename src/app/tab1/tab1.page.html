@@ -1,17 +1,69 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Data Form
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <ion-list>
+      <form [formGroup]="form">
+        <ion-list>
+          <ion-item>
+            <ion-label>Check List</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+          <ion-item>
+            <ion-label>Input Text</ion-label>
+            <ion-input formControlName="textinput"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Text Input</ion-label>
+            <ion-input formControlName="textinput"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Free Text</ion-label>
+            <ion-input formControlName="freetext"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Request</ion-label>
+            <ion-input formControlName="request"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Measurement Data</ion-label>
+            <ion-input formControlName="measurement"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Photo</ion-label>
+            <ion-input  placeholder="Take Photo" formControlName="photo"></ion-input>
+            <ion-icon name="camera-outline" (click)="takePhoto()"></ion-icon>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Date</ion-label>
+            <ion-datetime fromControlName="date" displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Signature</ion-label>
+            <ion-input formControlName="signature"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Details</ion-label>
+            <ion-textarea formControlName="details"></ion-textarea>
+          </ion-item>
+        </ion-list>
+        <ion-button expand="block" type="submit" (click)="onSubmit()"></ion-button>
+      </form>
+    </ion-list>
+  </ion-card>
 </ion-content>
